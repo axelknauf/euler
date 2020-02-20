@@ -1,4 +1,7 @@
 (ns euler.main)
 
+(defn euler-1 [threshold] 
+  (prn "Not yet implemented" threshold))
+
 (defn -main []
-  (println "Hello world"))
+  (euler-1 1000))

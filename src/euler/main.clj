@@ -1,7 +1,10 @@
 (ns euler.main)
 
 (defn euler-1 [threshold] 
-  (prn "Not yet implemented" threshold))
+  (->> (range threshold)
+       (filter #(or (= 0 (mod % 3))
+                    (= 0 (mod % 5))))
+       (reduce +)))
 
 (defn -main []
-  (euler-1 1000))
+  (println (euler-1 1000)))

@@ -1,14 +1,8 @@
 (ns euler.main-test
-  (:require [clojure.test :refer :all]))
+  (:require [clojure.test :refer :all]
+            [euler.main :refer :all]))
 
-(defn my-fixture [block]
-    (do
-        (println "before test")
-        (block)
-        (println "after test")))
-
-(use-fixtures :each my-fixture)
-
-(deftest my-test
-    (is (= 2 (+ 1 1))))
+(deftest euler-1-test
+  (testing "should solve Euler no. 1" 
+    (is (= 23 (euler-1 10)))))
 

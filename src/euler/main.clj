@@ -16,6 +16,21 @@
        (filter even?)
        (reduce +)))
 
+; https://en.wikipedia.org/wiki/Trial_division
+(defn prime-factors [n] 
+  (loop [factors []
+         cur n
+         i 2]
+    (if (<= cur 1)
+      factors
+      (if (= 0 (mod cur i))
+        (recur (cons i factors) (/ cur i) i)
+        (recur factors cur (+ 1 i))))))
+
+(defn euler-3 [n] 
+  (apply max (prime-factors n)))
+
 (defn -main []
   (println (euler-1 1000))
-  (println (euler-2 4000000)))
+  (println (euler-2 4000000))
+  (println (euler-3 600851475143)))
